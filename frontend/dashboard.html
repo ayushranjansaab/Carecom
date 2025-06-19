@@ -1,0 +1,164 @@
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Carecom</title>
+  <link rel="stylesheet" href="forall.css">
+</head>
+<body>
+ 
+  <div class="container">
+    <nav class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+
+    <main class="dashboard-content">
+      <h1>Book an Appointment</h1>
+      <form id="appointmentForm" class="form">
+        <input type="text" id="patientName" placeholder="Patient Name" required />
+        <input type="email" id="patientEmail" placeholder="Patient Email" required />
+        
+        <label for="doctorName">Select Doctor</label>
+        <select id="doctorName" required>
+          <option value="" disabled selected>Select a Doctor</option>
+          <option value="Dr. Trisha Panday">Dr. Trisha</option>
+          <option value="Dr. Anish Yadav">Dr. Anish</option>
+          <option value="Dr. Mega Fox">Dr. Fox</option>
+        </select>
+
+        <input type="date" id="appointmentDate" required />
+        <input type="text" id="appointmentTime" placeholder="Time (e.g., 10:30 AM)" required />
+        <button type="submit">Book Appointment</button>
+      </form>
+
+      <section class="card">
+        <h2>Your Appointments</h2>
+        <ul id="appointmentsList"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/appointment.js"></script>
+</body>
+</html>
+
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Carecom</title>
+  <link rel="stylesheet" href="forall1.css">
+  <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- ✅ Navbar Start -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">Carecom</a>
+      <ul class="nav-links">
+        <li><a href="index.html" style="font-size: x-large;">Home</a></li>
+        <li><a href="about.html" style="font-size: x-large;">About</a></li>
+        <li><a href="contact.html" style="font-size: x-large;">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- ✅ Navbar End -->
+
+  <!-- Background Image -->
+  <section class="login">
+    <img src="image.jpg" alt="background" class="login__img" />
+
+    <!-- Glass-style container -->
+    <div class="container">
+
+      <!-- Navigation -->
+      <nav class="login__check login__check-label" style="justify-content: space-between; margin-bottom: 2rem;">
+        <div class="login__check-group">
+          <a href="dashboard.html" class="login__register">Dashboard</a>
+          <a href="about.html" class="login__register">About</a>
+        </div>
+<a href="login.html" onclick="logout(event)" class="login__register">Logout</a>
+      </nav>
+
+      <!-- Title -->
+      <h1 class="login__title">Book an Appointment</h1>
+
+      <!-- Appointment Form -->
+      <form id="appointmentForm" class="login__content">
+
+        <div class="login__box">
+          <i class="fas fa-user login__icon"></i>
+          <div class="login__box-input">
+            <input type="text" id="patientName" required placeholder=" " class="login__input">
+            <label for="patientName" class="login__label">Patient Name</label>
+          </div>
+        </div>
+
+        <div class="login__box">
+          <i class="fas fa-envelope login__icon"></i>
+          <div class="login__box-input">
+            <input type="email" id="patientEmail" required placeholder=" " class="login__input">
+            <label for="patientEmail" class="login__label">Patient Email</label>
+          </div>
+        </div>
+
+        <div class="login__box">
+          <i class="fas fa-user-md login__icon"></i>
+          <div class="login__box-input">
+            <select id="doctorName" required class="login__input" style="background: transparent; color: white;">
+              <option value="" disabled selected>Select Doctor</option>
+              <option value="Dr. Trisha Panday">Dr. Trisha</option>
+              <option value="Dr. Anish Yadav">Dr. Anish</option>
+              <option value="Dr. Mega Fox">Dr. Fox</option>
+            </select>
+            <label for="doctorName" class="login__label">Select Doctor</label>
+          </div>
+        </div>
+
+        <div class="login__box">
+          <i class="fas fa-calendar login__icon"></i>
+          <div class="login__box-input">
+            <input type="date" id="appointmentDate" required placeholder=" " class="login__input">
+            <label for="appointmentDate" class="login__label">Appointment Date</label>
+          </div>
+        </div>
+
+        <div class="login__box">
+          <i class="fas fa-clock login__icon"></i>
+          <div class="login__box-input">
+            <input type="text" id="appointmentTime" required placeholder=" " class="login__input">
+            <label for="appointmentTime" class="login__label">Appointment Time</label>
+          </div>
+        </div>
+
+        <button type="submit" class="login__button">Book Appointment</button>
+      </form>
+
+      <!-- Appointments List -->
+      <section class="login__register" style="margin-top: 2rem;">
+        <h2>Your Appointments</h2>
+        <ul id="appointmentsList" style="margin-top: 1rem;"></ul>
+      </section>
+    </div>
+  </section>
+
+  <script src="js/appointment.js"></script>
+  <script>
+  function logout(event) {
+    event.preventDefault(); // Stop the link from redirecting
+    alert("You have been logged out successfully!");
+    window.location.href = "login.html"; // Redirect manually after alert
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Carecom</title>
+  <link rel="stylesheet" href="forall.css" />
+</head>
+<body>
+  <div class="form-wrapper">
+    <h2>User Registration</h2>
+    <form id="registerForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <select id="role" required>
+        <option value="">Select Role</option>
+        <option value="patient">Patient</option>
+        <option value="admin">Doctor</option>
+      </select>
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Carecom</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="login">
+    <img src="./image1.jpg" class="login__img" alt="Registration illustration" />
+
+    <form id="registerForm" class="container">
+      <h1 class="login__title">Register</h1>
+
+      <div class="login__content">
+        <div class="login__box">
+          <i class="ri-user-3-line login__icon"></i>
+          <div class="login__box-input">
+            <input type="text" id="name" name="name" required class="login__input" placeholder=" " />
+            <label for="name" class="login__label">Full Name</label>
+          </div>
+        </div>
+
+        <div class="login__box">
+          <i class="ri-mail-line login__icon"></i>
+          <div class="login__box-input">
+            <input type="email" id="email" name="email" required class="login__input" placeholder=" " />
+            <label for="email" class="login__label">Email Address</label>
+          </div>
+        </div>
+
+        <div class="login__box">
+          <i class="ri-lock-2-line login__icon"></i>
+          <div class="login__box-input">
+            <input type="password" id="password" name="password" required class="login__input" placeholder=" " />
+            <label for="password" class="login__label">Password</label>
+            <i class="ri-eye-off-line login__eye" id="register-eye"></i>
+          </div>
+        </div>
+
+        <div class="login__box">
+          <i class="ri-user-settings-line login__icon"></i>
+          <div class="login__box-input">
+            <select id="role" name="role" required class="login__input">
+              <option value="" disabled selected hidden></option>
+              <option value="patient">Patient</option>
+              <option value="admin">Doctor</option>
+            </select>
+            <label for="role" class="login__label">Select Role</label>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="login__button">Register</button>
+
+      <p class="login__register">
+        Already have an account? <a href="login.html">Login</a>
+      </p>
+    </form>
+  </div>
+
+  <script>
+    // Toggle password visibility
+    const eyeIcon = document.getElementById('register-eye');
+    const passwordInput = document.getElementById('password');
+
+    eyeIcon.addEventListener('click', () => {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      eyeIcon.classList.toggle('ri-eye-line');
+      eyeIcon.classList.toggle('ri-eye-off-line');
+    });
+  </script>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

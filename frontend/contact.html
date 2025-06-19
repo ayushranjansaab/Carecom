@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Carecom</title>
+  <link rel="stylesheet" href="forall1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="login">
+  <img src="image8.jpg" alt="Background" class="login__img" />
+
+  <!-- ✅ Navbar Start -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">Carecom</a>
+      <ul class="nav-links">
+        <li><a href="index.html" style="font-size: x-large;">Home</a></li>
+        <li><a href="about.html" style="font-size: x-large;">About</a></li>
+        <li><a href="dashboard.html" style="font-size: x-large;">Dashboard</a></li>
+        <li><a href="doctor-dashboard.html" style="font-size: x-large;">Doctor Panel</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- ✅ Navbar End -->
+
+  <div class="container">
+    <h1 class="login__title">Contact Us</h1>
+
+    <form class="login__content">
+      <div class="login__box">
+        <i class="fas fa-user login__icon"></i>
+        <input type="text" class="login__input" id="name" required placeholder=" " />
+        <label for="name" class="login__label">Your Name</label>
+      </div>
+
+      <div class="login__box">
+        <i class="fas fa-envelope login__icon"></i>
+        <input type="email" class="login__input" id="email" required placeholder=" " />
+        <label for="email" class="login__label">Email Address</label>
+      </div>
+
+      <div class="login__box">
+        <i class="fas fa-comment login__icon"></i>
+        <textarea class="login__input" id="message" rows="4" required placeholder=" " style="resize: none; background: transparent; color: white; border: 2px solid white; border-radius: 8px; padding: 0.75rem;"></textarea>
+        <label for="message" class="login__label">Your Message</label>
+      </div>
+
+      <button type="submit" class="login__button">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Message sent successfully!');
+    });
+  </script>
+
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
+</body>
+</html>

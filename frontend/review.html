@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reviews - Carecom</title>
+  <link rel="stylesheet" href="review.css">
+</head>
+<body>
+
+  <header class="header" style="margin-top: 50px;" >
+    <h1>Carecom Reviews</h1>
+    <nav class="navbar" style="height: 50px;">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="review.html" class="active">Reviews</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="review-form-section">
+      <h2>Leave a Review</h2>
+      <form class="review-form" action="#" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="rating">Rating:</label>
+        <select id="rating" name="rating" required>
+          <option value="">--Select--</option>
+          <option value="5">★★★★★ (5)</option>
+          <option value="4">★★★★☆ (4)</option>
+          <option value="3">★★★☆☆ (3)</option>
+          <option value="2">★★☆☆☆ (2)</option>
+          <option value="1">★☆☆☆☆ (1)</option>
+        </select>
+
+        <label for="review">Your Review:</label>
+        <textarea id="review" name="review" rows="4" required></textarea>
+
+        <button type="submit" class="btn">Submit Review</button>
+      </form>
+    </section>
+
+    <section class="reviews-display-section">
+      <h2>What Others Say</h2>
+      <div class="review-card">
+        <h3>Ravi Kumar</h3>
+        <p>★★★★☆</p>
+        <p>Excellent healthcare service and user-friendly dashboard!</p>
+      </div>
+
+      <div class="review-card">
+        <h3>Neha Sharma</h3>
+        <p>★★★★★</p>
+        <p>Highly professional doctors and smooth appointment process.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Carecom. All rights reserved.</p>
+  </footer>
+<script>
+  document.querySelector(".review-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent page refresh
+
+    const name = document.getElementById("name").value;
+    const rating = document.getElementById("rating").value;
+    const review = document.getElementById("review").value;
+
+    if (name && rating && review) {
+      const displaySection = document.querySelector(".reviews-display-section");
+
+      const newCard = document.createElement("div");
+      newCard.className = "review-card";
+      newCard.innerHTML = `
+        <h3>${name}</h3>
+        <p>${"★".repeat(rating)}${"☆".repeat(5 - rating)}</p>
+        <p>${review}</p>
+      `;
+
+      displaySection.appendChild(newCard);
+
+      // Clear the form
+      document.querySelector(".review-form").reset();
+
+      // ✅ Show success alert
+      alert("Thank you for your review!");
+    } else {
+      alert("Please fill out all fields.");
+    }
+  });
+</script>
+
+
+</body>
+</html>
